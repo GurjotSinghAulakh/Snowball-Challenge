@@ -1,0 +1,109 @@
+/*---------------------- Navigation Dropdown -----------------*/
+* {
+    padding: 0;
+    margin: 0;
+} 
+
+header{
+    width: 100%;
+}
+nav {
+    position: sticky;
+    top: 0px;
+    background: #797a7e;
+    height: 80px;
+    width: 100%;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);
+    z-index: 1;
+}
+
+nav .menu-close-btn {
+    display: none;
+}
+
+
+.logo {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    float: left;
+    margin-left: 5%;
+    font-size: 30px;
+    line-height: 80px;
+    color: white;
+    cursor: pointer;
+}
+
+.dropdown {
+    float: right;
+    width: 100%;
+}
+
+/* #25cdf7b6*/
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    top: 80px;
+    width: 100%;
+    position: absolute;
+    padding-top: 10px;
+    background-color: #f7f2e7;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+#check-box:checked ~ .dropdown-menu   {
+    display: block;
+}
+
+#check-box:checked ~ .checkbtn-close {
+    display: block;
+}
+
+#check-box:checked ~ label #bars-btn {
+    display: none;
+}
+
+label #bars-btn, label #close-btn {
+    background: white;
+    border-radius: 3px;
+}
+
+label #bars-btn {
+    display: block;
+    padding: 6px 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+label #close-btn {
+    padding: 6px 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#check-box {
+    display: none;
+}
+
+.checkbtn-open {
+    color: black;
+    float: right;
+    height: 2px;
+    margin-top: 20px;
+    margin-right: 5%;
+}
+
+.checkbtn-close {
+    color: black;
+    float: right;
+    margin-top: 20px;
+    display: none;
+}

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/test.css">
     <title>Snowball Challenge</title>
 </head>
 
@@ -13,11 +12,12 @@
     Sources:
 
 -->
-
-    <body>
+<body>
 <!------------------ Navigation --------------------------------->
-        <header>
-            <nav>
+
+    <header>
+        <nav>
+            <div class="dropdown">
                 <input type="checkbox" id="check-box">
                 <label for="check-box" class="checkbtn-open">
                     <i class="fas fa-bars" id="bars-btn"> Menu</i>
@@ -26,30 +26,138 @@
                     <i class="fas fa-times" id="close-btn"> Close</i>
                 </label>
 
-                <a href="index.html" class="logo">
+                <a href="index.html" class="logo">Logo</a>
 
-                    <!-- <img src="#" class="logo" alt=""> -->
-                    Logo
-                </a>
-                <ul>
-                    <li><a class="active" href="#our_concept">Our Concept</a></li>
-                    <li><a href="#solution">Solution</a></li>
-                    <li><a href="#our-team">Our Team</a></li>
-                </ul>
-            </nav>
-        </header>
+                <div class="dropdown-menu">
+                    <a class="active" href="#our_concept">Our Concept</a>
+                    <a href="#solution">Solution</a>
+                    <a href="#our-team">Our Team</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#sign-up">Sign Up</a>
+                    <a href="#login">Login</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-        <section id="our_concept" style="padding-top: 100px; height: 100vh;">
-            <h1>Our Concept</h1>
+<!---------------------------------- Our Concept --------------------------------->
+    <main>
+        <div class="wrapper">
+
+            <div class="background-image">
+                <img src="images/image2.jpg" alt="">
+            </div>
+
+            <section class="our_concept" id="our_concept">
+                <h1>Worried About Finding A Job?</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac orci augue.
+                    Maecenas condimentum nunc lobortis, cursus lectus non, vulputate libero.
+                    In hac habitasse platea dictumst. Phasellus placerat urna eu feugiat finibus.
+                    Etiam id mauris lectus. Nulla eros odio, feugiat a metus sed, tempus luctus ante.
+                    Nulla facilisi. Cras ullamcorper risus nisi, nec rutrum diam placerat ut.
+                    Vestibulum nunc elit, feugiat et odio eu, maximus pharetra ipsum.
+                    Suspendisse iaculis aliquam luctus. Proin volutpat lorem nisi,
+                    vitae dignissim ante lobortis quis. Nullam tincidunt lacus nisi,
+                    id finibus nibh elementum nec. Phasellus vel purus in dui viverra feugiat.
+                </p>
+            </section>
+
+            <section class="solution" id="solution">
+                <h1>Solution</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac orci augue.
+                    Maecenas condimentum nunc lobortis, cursus lectus non, vulputate libero.
+                    In hac habitasse platea dictumst. Phasellus placerat urna eu feugiat finibus.
+                    Etiam id mauris lectus. Nulla eros odio, feugiat a metus sed, tempus luctus ante.
+                    Nulla facilisi. Cras ullamcorper risus nisi, nec rutrum diam placerat ut.
+                    Vestibulum nunc elit, feugiat et odio eu, maximus pharetra ipsum.
+                    Suspendisse iaculis aliquam luctus. Proin volutpat lorem nisi,
+                    vitae dignissim ante lobortis quis. Nullam tincidunt lacus nisi,
+                    id finibus nibh elementum nec. Phasellus vel purus in dui viverra feugiat.
+                </p>
+                <div class="join-us-btn">
+                    <button>Join Us</button>
+                </div>
+                <div class="txt">
+                    <h1>What do we do?</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac orci augue.
+                        Maecenas condimentum nunc lobortis, cursus lectus non, vulputate libero.
+                        In hac habitasse platea dictumst. Phasellus placerat urna eu feugiat finibus.
+                        Etiam id mauris lectus. Nulla eros odio, feugiat a metus sed, tempus luctus ante.
+                        Nulla facilisi. Cras ullamcorper risus nisi, nec rutrum diam placerat ut.
+                        Vestibulum nunc elit, feugiat et odio eu, maximus pharetra ipsum.
+                        Suspendisse iaculis aliquam luctus. Proin volutpat lorem nisi,
+                        vitae dignissim ante lobortis quis. Nullam tincidunt lacus nisi,
+                        id finibus nibh elementum nec. Phasellus vel purus in dui viverra feugiat.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+<!--------------------------- Our Team --------------------------------->
+        <div class="wrapper">
+            <section class="our_team" id="our-team">
+                <h1>Our Team</h1>
+
+                <div class="person">
+                    <div class="person-image">
+                        <img src="Images/Gurjot.jpg" alt="">
+                        <div class="persons-name">Gurjot Singh Aulakh</div>
+                        <div class="title">CEO &amp; Founder</div>
+                        <div class="contact-info">
+                            <a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="person">
+                    <div class="person-image">
+                        <img src="Images/Mortaza.jpg" alt="">
+                        <div class="persons-name">Mortaza Baqeri</div>
+                        <div class="title">Designer</div>
+                        <div class="contact-info">
+                            <a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+<!-------------------------------Footer-------------------------------------->
+    <footer>
+        <section class="container-footer">
+            <div class="left-column">
+                <h2>2625 w. baseline rd. <br> tempe, az 85283-1056</h2>
+                <div class="s-media">
+                    <a href="https://www.facebook.com/UATedu" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/uatedu/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/uatedu" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <h3>Stay Tuned</h3>
+                <p>Subscribe our newsletter and don't miss any update.</p>
+                <form action="" class="newsletter">
+                    <input type="text" class="text-box" placeholder="Enter your email">
+                    <input type="submit" class="button" value="submit">
+                </form>
+            </div>
         </section>
+    </footer>
 
-        <section id="solution" style="height: 100vh; padding-top: 100px;">
-            <h1>Solution</h1>
-        </section>
+    <div class="copyright">
+        <hr>
+        <p>&copy 2020 Created By Be Your Own Solution.</p>
+    </div>
 
-        <section id="our-team" style="height: 100vh; padding-top: 100px;">
-            <h1>Our Team</h1>
-        </section>
-
-    </body>
+</body>
 </html>

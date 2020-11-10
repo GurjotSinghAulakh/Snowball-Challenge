@@ -2,61 +2,497 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <title>Document</title>
 </head>
 
+<!--
+    Sources:
+
+    https://www.google.com/search?q=wooried+about+finding+a+job&tbm=isch&ved=2ahUKEwiOhbDmgtrsAhXStCoKHRDrBtkQ2-cCegQIABAA&oq=wooried+about+finding+a+job&gs_lcp=CgNpbWcQAzoHCCMQ6gIQJzoECCMQJzoFCAAQsQM6AggAOgQIABBDOgYIABAKEBg6BAgAEBhQwERYtndg2HpoAXAAeACAAVWIAaMNkgECMjeYAQCgAQGqAQtnd3Mtd2l6LWltZ7ABCsABAQ&sclient=img&ei=6tKaX47oA9LpqgGQ1pvIDQ&bih=946&biw=1186#imgrc=MlIdJXWuHXdGrM
+
+-->
+
 <style>
 
-    .toggle {
-        --width: 40px;
-        --height: calc(var(--width) / 2);
-        --border-radius: calc(var(--height) / 2);
-
-        display: inline-block;
-        cursor: pointer;
+/*---------------------- Navigation Dropdown -----------------*/
+    * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+        font-family: 'Times New Roman', Times, serif;
     }
 
-    .toggle__input {
+    nav {
+        position: absolute;
+/*      background: #25CCF7; */
+        height: 80px;
+        width: 100%;
+/*      margin: 10px 10px;*/
+        box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);
+        z-index: 1;
+    }
+
+    .logo {
+        display: flex;
+        margin-top: 25px;
+        float: left;
+        margin-left: 10%;
+        font-weight: bold;
+        font-size: 22px;
+        color: black;
+        cursor: pointer;
+        letter-spacing: 1px;
+    }
+
+    .dropdown {
+        float: right;
+        width: 100%;
+    }
+
+    /* #25cdf7b6*/
+    .dropdown-menu {
+        display: none;
+        flex-direction: column;
+        top: 80px;
+        width: 100%;
+        position: absolute;
+        padding-top: 10px;
+        background-color: white;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-menu a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+    }
+
+    #check-box:checked ~ .dropdown-menu   {
+        display: block;
+    }
+
+    #check-box:checked ~ .checkbtn-close {
+        display: block;
+    }
+
+    #check-box:checked ~ label #bars-btn {
         display: none;
     }
 
-    .toggle__fill {
-        position: relative;
-        width: var(--width);
-        height: var(--height);
-        border-radius: var(--border-radius);
-        background: #dddddd;
-        transition: background 0.2s;
+    label #bars-btn, label #close-btn {
+        background: black;
+        border-radius: 3px;
     }
 
-    .toggle__fill::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: var(--height);
-        width: var(--height);
-        background: #ffffff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-        border-radius: var(--border-radius);
-        transition: transform 0.2s;
+    label #bars-btn {
+        display: block;
+        padding: 6px 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
     }
 
-    .toggle__input:checked ~ .toggle__fill {
-        background: #009578;
+    label #close-btn {
+        padding: 6px 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
     }
 
-    .toggle__input:checked ~ .toggle__fill::after {
-        transform: translateX(var(--height));
+    #check-box {
+        display: none;
     }
-    
+
+    .checkbtn-open {
+        color: white;
+        float: right;
+        height: 2px;
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+
+    .checkbtn-close {
+        color: white;
+        float: right;
+        margin-top: 20px;
+        display: none;
+    }
+
+    /*------------------------- Our Concept -------------------------*/
+
+    .wrapper {
+        width: 90%;
+        margin: 0px auto;
+ /*     padding-top: 250px;    */
+    }
+
+    .wrapper::after {
+        content: " ";
+        clear: both;
+        display: table;
+    }
+
+    .background-image {
+        padding-top: 120px;
+    }
+
+    .background-image img {
+        width: 100%;
+    }
+
+    .our_concept {
+        padding-top: 40px;
+        line-height: 25px;
+    }
+
+    .our_concept h1 {
+        color: black;
+        text-align: center;
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+
+    .our_concept p {
+        padding-top: 20px;
+    }
+
+    .solution {
+        padding-top: 40px;
+        line-height: 25px;
+    }
+
+    .solution h1 {
+        color: black;
+        font-size: 22px;
+        letter-spacing: 1px;
+        border-bottom: black 2px solid;
+    }
+
+    .solution p {
+        padding-top: 20px;
+    }
+
+    .join-us-btn {
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .join-us-btn button {
+        font-size: 24px;
+        padding: 5px 8px;
+        border-radius: 10px;
+        background: white;
+    }
+
+    .txt {
+        padding-top: 40px;
+    }
+
+
+/* ----------- Our Team ----------------*/
+
+    .our_team {
+        padding-top: 40px;
+    }
+
+    .our_team h1 {
+        color: black;
+        font-size: 22px;
+        letter-spacing: 1px;
+        border-bottom: black 2px solid;
+    }
+
+    .person {
+        float: left;
+        width: 45%;
+        margin-left: 12px;
+
+    }
+
+    .person-image {
+        padding: 40px 0;
+    }
+
+    .person-image img {
+        width: 100%
+    }
+
+    .persons-name {
+        text-align: center;
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .contact-info {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .contact-info a {
+        padding-right: 10px;
+        color: black;
+        font-size: 20px;
+    }
+
+/*--------------------Footer---------------------*/
+    footer {
+        height: 200px;
+        background: #CAD3C8;
+        color: black;
+    }
+
+    .container-footer {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .left-column {
+        width: 50%;
+        float: left;
+        padding: 30px;
+        padding-left: 5%;
+    }
+
+    .left-column h2 {
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .s-media {
+        padding: 20px 0px 20px 0px;
+    }
+
+    .s-media a{
+        font-size: 16px;
+        padding: 5px;
+        color: black;
+    }
+
+    .right-column {
+        float: left;
+        padding: 10px;
+        padding-left: 5%;
+        padding-bottom: 30px;
+    }
+
+    .right-column h3 {
+        color: black;
+        font-size: 22px;
+        letter-spacing: 1px;
+        border-bottom: black 2px solid;
+    }
+
+    .right-column  p{
+        color: black;
+        margin: 15px auto;
+        letter-spacing: 1px;
+    }
+
+
+    .newsletter {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .text-box {
+        padding: 10px 10px;
+        font-size: 16px;
+        color: black;
+        border: none;
+        border-radius: 25px;
+        font-weight: 500px;
+        outline: none;
+        min-width: 260px;
+        letter-spacing: 1px;
+    }
+
+
+    .button {
+        margin-left: 10px;
+        padding: 10px 12px;
+        font-size: 16px;
+        color: black;
+        background: #F8EFBA;
+        border: none;
+        border-radius: 30px;
+        font-weight: 500px;
+        letter-spacing: 1px;
+        outline: none;
+    }
+
+    .copyright {
+        background: #CAD3C8;
+        border-bottom: 5px solid #F8EFBA;
+    }
+
+    .copyright p {
+        margin: 5px auto;
+        text-align: center;
+        font-size: 14px;
+        color: black;
+        letter-spacing: 2px;
+    }
+
 
 </style>
 
-<body>
-    <label class="toggle" for="myToggle">
-        <input class="toggle__input" name="" type="checkbox" id="myToggle">
-        <div class="toggle__fill"></div>
-    </label>
-</body>
+
+    <body>
+<!------------------ Navigation --------------------------------->
+
+        <header>
+            <nav>
+                <div class="dropdown">
+                    <input type="checkbox" id="check-box">
+                    <label for="check-box" class="checkbtn-open">
+                        <i class="fas fa-bars" id="bars-btn"> Menu</i>
+                    </label>
+                    <label for="check-box" class="checkbtn-close">
+                        <i class="fas fa-times" id="close-btn"> Close</i>
+                    </label>
+
+                    <a href="index.html" class="logo">Logo</a>
+
+                    <div class="dropdown-menu">
+                        <a class="active" href="#our_concept">Our Concept</a>
+                        <a href="#solution">Solution</a>
+                        <a href="#our-team">Our Team</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="#sign-up">Sign Up</a>
+                        <a href="#login">Login</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+<!---------------------------------- Our Concept --------------------------------->
+        <main>
+            <div class="wrapper">
+
+                <div class="background-image">
+                    <img src="images/image2.jpg" alt="">
+                </div>
+
+                <section class="our_concept" id="our_concept">
+                    <h1>Worried About Finding A Job?</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac orci augue.
+                        Maecenas condimentum nunc lobortis, cursus lectus non, vulputate libero.
+                        In hac habitasse platea dictumst. Phasellus placerat urna eu feugiat finibus.
+                        Etiam id mauris lectus. Nulla eros odio, feugiat a metus sed, tempus luctus ante.
+                        Nulla facilisi. Cras ullamcorper risus nisi, nec rutrum diam placerat ut.
+                        Vestibulum nunc elit, feugiat et odio eu, maximus pharetra ipsum.
+                        Suspendisse iaculis aliquam luctus. Proin volutpat lorem nisi,
+                        vitae dignissim ante lobortis quis. Nullam tincidunt lacus nisi,
+                        id finibus nibh elementum nec. Phasellus vel purus in dui viverra feugiat.
+                    </p>
+                </section>
+
+                <section class="solution" id="solution">
+                    <h1>Solution</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac orci augue.
+                        Maecenas condimentum nunc lobortis, cursus lectus non, vulputate libero.
+                        In hac habitasse platea dictumst. Phasellus placerat urna eu feugiat finibus.
+                        Etiam id mauris lectus. Nulla eros odio, feugiat a metus sed, tempus luctus ante.
+                        Nulla facilisi. Cras ullamcorper risus nisi, nec rutrum diam placerat ut.
+                        Vestibulum nunc elit, feugiat et odio eu, maximus pharetra ipsum.
+                        Suspendisse iaculis aliquam luctus. Proin volutpat lorem nisi,
+                        vitae dignissim ante lobortis quis. Nullam tincidunt lacus nisi,
+                        id finibus nibh elementum nec. Phasellus vel purus in dui viverra feugiat.
+                    </p>
+                    <div class="join-us-btn">
+                        <button>Join Us</button>
+                    </div>
+                    <div class="txt">
+                        <h1>What do we do?</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac orci augue.
+                            Maecenas condimentum nunc lobortis, cursus lectus non, vulputate libero.
+                            In hac habitasse platea dictumst. Phasellus placerat urna eu feugiat finibus.
+                            Etiam id mauris lectus. Nulla eros odio, feugiat a metus sed, tempus luctus ante.
+                            Nulla facilisi. Cras ullamcorper risus nisi, nec rutrum diam placerat ut.
+                            Vestibulum nunc elit, feugiat et odio eu, maximus pharetra ipsum.
+                            Suspendisse iaculis aliquam luctus. Proin volutpat lorem nisi,
+                            vitae dignissim ante lobortis quis. Nullam tincidunt lacus nisi,
+                            id finibus nibh elementum nec. Phasellus vel purus in dui viverra feugiat.
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+<!--------------------------- Our Team --------------------------------->
+            <div class="wrapper">
+                <section class="our_team" id="our-team">
+                    <h1>Our Team</h1>
+
+                    <div class="person">
+                        <div class="person-image">
+                            <img src="Images/Gurjot.jpg" alt="">
+                            <div class="persons-name">Gurjot Singh Aulakh</div>
+                            <div class="title">CEO &amp; Founder</div>
+                            <div class="contact-info">
+                                <a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="person">
+                        <div class="person-image">
+                            <img src="Images/Mortaza.jpg" alt="">
+                            <div class="persons-name">Mortaza Baqeri</div>
+                            <div class="title">Designer</div>
+                            <div class="contact-info">
+                                <a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+
+<!-------------------------------Footer-------------------------------------->
+        <footer>
+            <section class="container-footer">
+                <div class="left-column">
+                    <h2>2625 w. baseline rd. <br> tempe, az 85283-1056</h2>
+                    <div class="s-media">
+                        <a href="https://www.facebook.com/UATedu" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/uatedu/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/uatedu" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <h3>Stay Tuned</h3>
+                    <p>Subscribe our newsletter and don't miss any update.</p>
+                    <form action="" class="newsletter">
+                        <input type="text" class="text-box" placeholder="Enter your email">
+                        <input type="submit" class="button" value="submit">
+                    </form>
+                </div>
+            </section>
+        </footer>
+
+        <div class="copyright">
+            <hr>
+            <p>&copy 2020 Created By Be Your Own Solution.</p>
+        </div>
+
+    </body>
 </html>
