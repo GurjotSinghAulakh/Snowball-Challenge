@@ -1,0 +1,67 @@
+
+/* ------------------------ Responsive Navigation ----------------------*/
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #F97F51;
+        top: 80px;
+        right: -100%;
+        text-align: center;
+        transition: all 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+        text-align: center;
+
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    nav ul li a:hover, nav ul li a.active {
+        background: none;
+        color:  #9AECDB;
+    }
+
+    #check-box:checked ~ ul {
+        right: 0;
+    }
+    
+    #check-box:checked ~ .checkbtn-close {
+        display: block;
+        margin-right: 0px;
+    }
+    
+    #check-box:checked ~ label #bars-btn {
+        display: none;
+    }
+
+    label #bars-btn, label #close-btn {
+        background: black;
+        border-radius: 3px;
+    }
+    
+    label #bars-btn {
+        display: block;
+        padding: 6px 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    
+    label #close-btn {
+        padding: 6px 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    
+}
